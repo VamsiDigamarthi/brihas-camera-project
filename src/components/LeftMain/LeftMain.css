@@ -1,0 +1,65 @@
+
+.left-main-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /* border: 1px solid red; */
+    background-color: rgb(39, 39, 39);
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.total-card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.all-cameras-card-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.camera-cards{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background-color:rgba(255, 93, 29, 0.3);
+    border-left: 3px solid #ff5d1d;
+    padding: 9px;
+    width: 200px;
+    border-radius: 6px;
+    padding-left: 10px;
+}
+
+.dt-at-card{
+    display: flex;
+    gap: 0.8rem;
+}
+
+.icons-camer-cards{
+    display: flex;
+    gap: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.icons-camer-cards>:nth-child(1){
+   
+    background-color: #ff5d1d;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icons-camer-cards>:nth-child(2){
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}

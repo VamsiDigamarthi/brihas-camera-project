@@ -1,0 +1,28 @@
+
+.header{
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: grey; */
+}
+
+.header div{
+    width: 65%;
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    /* border: 1px solid red; */
+}
+
+.header div h3{
+    font-family: 'Courier New', Courier, monospace;
+    /* font-style: oblique; */
+    font-size: 26px;
+    font-weight: 800;
+}
+
+.header-icons{
+    width: 10%;
+    border: 2px solid green;
+}

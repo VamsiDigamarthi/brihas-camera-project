@@ -1,0 +1,16 @@
+
+.main-container-main{
+    display: flex;
+    width: 100%;
+    /* border: 2px solid red; */
+    color: #fff;
+    gap: 2rem;
+}
+
+.main-container-main>:nth-child(1){
+    width: 49%;
+}
+
+.main-container-main>:nth-child(2){
+    width: 51%;
+}
