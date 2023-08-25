@@ -4,7 +4,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: grey; */
+    background-color: grey;
+    padding: 10px;
+    border-radius: 6px;
 }
 
 .header div{

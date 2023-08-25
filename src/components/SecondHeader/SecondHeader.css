@@ -15,9 +15,14 @@
     color: brown;
     background: transparent;
     border-radius: 6px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     outline: none;
+    color: #fff;
+}
+
+.selected-drop option{
+    color: gray;
 }
 
 .apply-btn {

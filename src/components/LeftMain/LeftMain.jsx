@@ -4,47 +4,67 @@ import {BsCameraVideo} from 'react-icons/bs'
 
 const values = [
     {
-        id : "1"
+        id : "1",
+        url:"https://youtu.be/AsvGScyj4gw?feature=shared",
     },
     {
-        id : "1"
+        id : "1",
+        url:"https://youtu.be/VutF0FpL4Pw?feature=shared",
     },
     {
-        id : "1"
+        id : "1",
+        url:"https://youtu.be/98y83GscKEI?feature=shared",
     },
     {
-        id : "1"
+        id : "1",
+        url:"https://youtu.be/aVCjIV6YGoI?feature=shared",
     },
     {
-        id : "1"
+        id : "1",
+        url:"https://youtu.be/AsvGScyj4gw?feature=shared",
     },
     {
-        id : "1"
+        id : "1",
+        url:"https://youtu.be/aVCjIV6YGoI?feature=shared",
     },
     {
-        id : "1"
+        id : "1",
+        url:"https://youtu.be/aVCjIV6YGoI?feature=shared",
     },
     {
-        id : "1"
+        id : "1",
+        url:"https://youtu.be/AsvGScyj4gw?feature=shared",
     },
     {
-        id : "1"
+        id : "1",
+        url:"https://youtu.be/VutF0FpL4Pw?feature=shared",
     },    {
-        id : "1"
+        id : "1",
+        url:"https://youtu.be/aVCjIV6YGoI?feature=shared",
     },
     {
-        id : "1"
+        id : "1",
+        url:"https://youtu.be/VutF0FpL4Pw?feature=shared",
+
     },
     {
-        id : "1"
+        id : "1",
+        url:"https://youtu.be/AsvGScyj4gw?feature=shared",
     },
     {
-        id : "1"
+        id : "1",
+        url:"https://youtu.be/VutF0FpL4Pw?feature=shared",
+
     },
 
-]
+] 
 
-const LeftMain = () => {
+
+
+
+
+
+const LeftMain = ({videosLink}) => {
   return (
     <div className='left-main-container'>
         <div className='total-card'>
@@ -53,8 +73,8 @@ const LeftMain = () => {
             <p>offline : 9</p>
         </div>
         <div className='all-cameras-card-container'>
-            {values.map((each) => (
-                <div className='camera-cards'>
+            {values.map((each, key) => (
+                <div key={key} className='camera-cards' onClick={() => videosLink(each)}>
                 <div className='dt-at-card'>
                     <span>DT <span>Hyderbad</span></span>
                     <span>PS No <span>3</span></span>

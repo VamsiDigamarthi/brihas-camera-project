@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './SecondHeader.css'
 import {Link} from 'react-router-dom'
 import {BiSearchAlt2} from 'react-icons/bi'
@@ -34,10 +34,20 @@ const assembly = [
 
 ]
 
+
 const SecondHeader = () => {
+
+    const [dis, setDis] = useState("")
+
+    const distictChange = e => {
+        setDis(e.target.value)
+    }
+
+    console.log(dis)
+
   return (
     <div className='secondheader-main'>
-         <select className='selected-drop'>
+         <select className='selected-drop' onChange={distictChange}>
             <option disabled selected >
                 Please select distict
             </option>

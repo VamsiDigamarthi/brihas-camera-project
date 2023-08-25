@@ -8,14 +8,15 @@ import 'react-html5video/dist/styles.css';
 
 
 
-const RightMain = () => {
+const RightMain = ({value}) => {
   return (
     <div>
       {/* <Video>
         <source src='./videos/_import_60d962f06b3ef8.86089157_FPpreview.mp4' type='video/webm' />
       </Video> */}
       <ReactPlayer 
-          url="./videos/WhatsApp Video 2023-08-24 at 10.57.12 AM.mp4"
+          //url="./videos/WhatsApp Video 2023-08-24 at 10.57.12 AM.mp4"
+          url={value}
           controls="true"
           height="550px"
       />
