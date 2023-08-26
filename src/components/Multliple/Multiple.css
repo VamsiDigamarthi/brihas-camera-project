@@ -5,3 +5,48 @@
     flex-wrap: wrap;
     gap: 2rem;
 }
+
+
+.pagination-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    /* border: 1px solid red; */
+}
+
+.pagination-container div{
+    width: fit-content;
+    border: 2px solid brown;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.prev-btn{
+    width: 70px;
+    height: 35px;
+    color: brown;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.number-btn{
+    width: 50px;
+    height: 36px;
+    color: brown;
+    border-left: 1px solid brown;
+    background-color: transparent;
+    outline: none;
+}
+
+.paginat{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    color: brown;
+    font-size: 18px;
+    font-weight: 700;
+    
+}
