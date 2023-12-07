@@ -1,119 +1,129 @@
-
-
-.secondheader-main{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    /* border: 1px solid red; */
-    /* color: #fff; */
+.secondheader-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+  /* gap: 0.4rem; */
+  /* border: 1px solid red; */
+  /* color: #fff; */
 }
 
-.selected-drop{
-    width: 180px;
-    height: 33px;
-    color: brown;
-    background: transparent;
-    border-radius: 6px;
-    font-size: 14px;
-    font-weight: 600;
-    outline: none;
-    color: #fff;
+.selected-drop {
+  width: 180px;
+  height: 33px;
+  color: brown;
+  background: transparent;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  outline: none;
+  color: #fff;
 }
 
-.selected-drop option{
-    color: gray;
+.selected-drop option {
+  color: gray;
 }
 
 .apply-btn {
-    width: 170px;
-height: 35px;
+  width: 170px;
+  height: 35px;
 }
-.apply-btn button{
-    width: 100%;
-    background-color: brown;
-    border: none;
-    outline: none;
-    border-radius: 6px;
-    color: #fff;
-    font-size: 17px;
-    font-weight: 600;
-    height: 100%;
-}
-
-.two-input-with-icon{
-    width: 260px;
-    border: 1px solid grey;
-    display: flex;
-    height: 35px;
-    border-radius: 6px;
-    overflow: hidden;
+.apply-btn button {
+  width: 100%;
+  background-color: brown;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+  height: 100%;
 }
 
-.two-input-with-icon input{
-    background: transparent;
-    border: none;
-    width: 43%;
-    border-right: 1px solid grey;
-    padding-left: 10px;
-    color: #fff;
+.two-input-with-icon {
+  width: 260px;
+  border: 1px solid grey;
+  display: flex;
+  height: 35px;
+  border-radius: 6px;
+  overflow: hidden;
 }
 
-.two-input-with-icon>:nth-child(3){
-    color: #fff;
-    width: 14%;
-    height: 100%;
-    background-color: brown;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 25px;
+.two-input-with-icon input {
+  background: transparent;
+  border: none;
+  width: 43%;
+  border-right: 1px solid grey;
+  padding-left: 10px;
+  color: #fff;
 }
 
-.tile-buttons-main{
-    width: 320px;
-    display: flex;
+.two-input-with-icon > :nth-child(3) {
+  color: #fff;
+  width: 14%;
+  height: 100%;
+  background-color: brown;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+}
+
+.tile-buttons-main {
+  width: 320px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 35px;
+
+  gap: 0.7rem;
+}
+
+/* newly added  */
+@media (max-width: 800px) {
+  .tile-buttons-main {
+    margin-top: 20px;
     justify-content: space-between;
-    align-items: center;
-    height: 35px;
- 
-    gap: 0.7rem;
+    width: 100%;
+  }
 }
 
-.tile-buttons-main>:nth-child(1){
-    background-color: brown;
-    width: 80px;
-    height: 35px;
-    border: none;
-    outline: none;
-    color: #fff;
-    border-radius: 6px;
-    font-size: 16px;
-    font-style: italic;
-    font-weight: 600;
+/* newly added */
+
+.tile-buttons-main > :nth-child(1) {
+  background-color: brown;
+  width: 80px;
+  height: 35px;
+  border: none;
+  outline: none;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 600;
 }
 
-
-.tile-buttons-main>:nth-child(2) button{
-    background-color: transparent;
-    width: 120px;
-    height: 35px;
-    border: 2px solid brown;
-    outline: none;
-    color: #fff;
-    border-radius: 6px;
-    font-size: 16px;
-    font-weight: 600;
+.tile-buttons-main > :nth-child(2) button {
+  background-color: transparent;
+  width: 120px;
+  height: 35px;
+  border: 2px solid brown;
+  outline: none;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
 }
 
-.tile-buttons-main>:nth-child(3){
-    background-color: transparent;
-    width: 120px;
-    height: 35px;
-    border: 2px solid brown;
-    outline: none;
-    color: #fff;
-    border-radius: 6px;
-    font-size: 16px;
-    font-weight: 600;
+.tile-buttons-main > :nth-child(3) {
+  background-color: transparent;
+  width: 120px;
+  height: 35px;
+  border: 2px solid brown;
+  outline: none;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
 }

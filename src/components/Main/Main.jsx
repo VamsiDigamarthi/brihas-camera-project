@@ -1,9 +1,7 @@
-import React, { useState } from 'react'
-import LeftMain from '../LeftMain/LeftMain'
-import RightMain from '../RightMain/RightMain'
-import './Main.css'
-
-
+import React, { useState } from "react";
+import LeftMain from "../LeftMain/LeftMain";
+import RightMain from "../RightMain/RightMain";
+import "./Main.css";
 
 // const arrey=[
 //   {
@@ -25,24 +23,21 @@ import './Main.css'
 //     address:"ts"
 //   }]
 
-
-const Main = () => {
-
-  const [value, setValue] = useState([])
+const Main = ({ finalFilterData }) => {
+  const [value, setValue] = useState(finalFilterData[0]);
 
   const videosLink = (each) => {
     setValue(each.url);
-  }
+  };
 
-  console.log(value)
+  console.log(value);
 
   return (
-    <div className='main-container-main'>
-        <LeftMain videosLink={videosLink} />
-        <RightMain value={value} />
-
+    <div className="main-container-main">
+      <LeftMain videosLink={videosLink} finalFilterData={finalFilterData} />
+      <RightMain value={value} />
     </div>
-  )
-}
+  );
+};
 
-export default Main
+export default Main;

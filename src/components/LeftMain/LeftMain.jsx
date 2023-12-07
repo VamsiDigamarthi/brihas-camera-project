@@ -1,94 +1,116 @@
-import React from 'react'
-import './LeftMain.css'
-import {BsCameraVideo} from 'react-icons/bs'
+import React from "react";
+import "./LeftMain.css";
+import { BsCameraVideo } from "react-icons/bs";
+import { useState } from "react";
+import ReactPaginate from "react-paginate";
 
-const values = [
-    {
-        id : "1",
-        url:"http://sample.vodobox.net/skate_phantom_flex_4k/skate_phantom_flex_4k.m3u8",
-    },
-    {
-        id : "1",
-        url:"http://playertest.longtailvideo.com/adaptive/wowzaid3/playlist.m3u8",
-    },
-    {
-        id : "1",
-        url:"http://cdn-fms.rbs.com.br/vod/hls_sample1_manifest.m3u8",
-    },
-    {
-        id : "1",
-        url:"http://nasatv-lh.akamaihd.net/i/NASA_101@319270/index_1000_av-p.m3u8?sd=10&rebase=on",
-    },
-    {
-        id : "1",
-        url:"http://content.jwplatform.com/manifests/vM7nH0Kl.m3u8",
-    },
-    {
-        id : "1",
-        url:"http://walterebert.com/playground/video/hls/sintel-trailer.m3u8",
-    },
-    {
-        id : "1",
-        url:"http://qthttp.apple.com.edgesuite.net/1010qwoeiuryfg/sl.m3u8",
-    },
-    {
-        id : "1",
-        url:"https://devimages.apple.com.edgekey.net/streaming/examples/bipbop_16x9/bipbop_16x9_variant.m3u8",
-    },
-    {
-        id : "1",
-        url:"https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8",
-    },    {
-        id : "1",
-        url:"https://d1gnaphp93fop2.cloudfront.net/videos/multiresolution/rendition_new10.m3u8",
-    },
-    {
-        id : "1",
-        url:"https://res.cloudinary.com/dannykeane/video/upload/sp_full_hd/q_80:qmax_90,ac_none/v1/dk-memoji-dark.m3u8",
+const LeftMain = ({ videosLink, finalFilterData }) => {
+  console.log(finalFilterData);
 
-    },
-    {
-        id : "1",
-        url:"https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
-    },
-    {
-        id : "1",
-        url:"https://diceyk6a7voy4.cloudfront.net/e78752a1-2e83-43fa-85ae-3d508be29366/hls/fitfest-sample-1_Ott_Hls_Ts_Avc_Aac_16x9_1280x720p_30Hz_6.0Mbps_qvbr.m3u8",
+  let onLine = finalFilterData.filter((each) => each.mode === "Online");
 
-    },
+  let offLine = finalFilterData.filter((each) => each.mode === "Offline");
 
-] 
+  // pagination start
 
+  const [itemOffset, setItemOffset] = useState(0);
 
+  const endOffset = itemOffset + 12;
 
+  const currentItems = finalFilterData.slice(itemOffset, endOffset);
 
+  const pageCount = Math.ceil(finalFilterData.length / 12);
 
+  const handlePageClick = (event) => {
+    const newOffset = (event.selected * 12) % finalFilterData.length;
+    setItemOffset(newOffset);
+  };
 
-const LeftMain = ({videosLink}) => {
+  // pagination end
+
   return (
-    <div className='left-main-container'>
-        <div className='total-card'>
-            <p>Total : 2</p>
-            <p>online :3</p>
-            <p>offline : 9</p>
-        </div>
-        <div className='all-cameras-card-container'>
-            {values.map((each, key) => (
-                <div key={key} className='camera-cards' onClick={() => videosLink(each)}>
-                    <div className='dt-at-card'>
-                        <span>DT <span>Hyderbad</span></span>
-                        <div className='icons-camer-cards'>
-                            <div>
-                                <BsCameraVideo />
-                            </div>
-                        </div>                
-                    </div>
+    <div className="left-main-container">
+      <div className="total-card">
+        <p>Total : {finalFilterData.length}</p>
+        <p>
+          online :{" "}
+          <span
+            style={{
+              color: "green",
+              fontSize: "18px",
+              fontWeight: "bold",
+            }}
+          >
+            {onLine.length}
+          </span>
+        </p>
+        <p>
+          offline :
+          <span
+            style={{
+              color: "rgba(255, 93, 29, 0.3)",
+              fontSize: "18px",
+              fontWeight: "bold",
+            }}
+          >
+            {" "}
+            {offLine.length}
+          </span>
+        </p>
+      </div>
+      <div className="all-cameras-card-container">
+        {currentItems.map((each, key) => (
+          <div
+            key={key}
+            className="camera-cards"
+            onClick={() => videosLink(each)}
+            style={{
+              backgroundColor:
+                each.mode === "Online"
+                  ? "rgba(29, 255, 40, 0.3)"
+                  : "rgba(255, 93, 29, 0.3)",
+              borderLeft:
+                each.mode === "Online"
+                  ? "3px solid green"
+                  : "3px solid #ff5d1d",
+            }}
+          >
+            <div className="dt-at-card">
+              <div className="cam__added__div">
+                <span>
+                  DT <span>Hyderbad</span>
+                </span>
+                <span>{each.dist}</span>
+                <span>{each.subDist}</span>
+              </div>
+              <div className="icons-camer-cards">
+                <div
+                  style={{
+                    backgroundColor:
+                      each.mode === "Online" ? "green" : "#ff5d1d",
+                  }}
+                >
+                  <BsCameraVideo />
                 </div>
-            ))}
-            
-        </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div>
+        <ReactPaginate
+          breakLabel="..."
+          nextLabel="next>"
+          onPageChange={handlePageClick}
+          pageRangeDisplayed={5}
+          pageCount={pageCount}
+          previousLabel="<prev"
+          renderOnZeroPageCount={null}
+          className="paginat"
+        />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default LeftMain
+export default LeftMain;
